@@ -1,0 +1,261 @@
+/* ==========================================================
+   MAIN NAVBAR LAYOUT CONTAINER
+========================================================== */
+.custom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #7E2FD5; /* Solid main theme brand purple */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 9999;
+}
+
+/* Left Section: Logo & Main Navigation List Links */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-logo img {
+  height: 28px;
+  display: block;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  color: #15E3C4; /* Vibrant brand aqua color */
+  font-weight: 500;
+}
+
+/* Dropdown list items & invisible bridge anchors to maintain focus */
+.navbar-links .dropdown {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  padding: 14px 0; /* Creates an unbroken click/hover hit-box connection to the menu */
+  transition: opacity 0.2s ease;
+}
+
+.navbar-links .dropdown:hover {
+  opacity: 0.95;
+}
+
+.arrow {
+  font-size: 8px;
+  margin-left: 2px;
+}
+
+/* ==========================================================
+   MEGA DROPDOWN MENUS (SOLID CORE DARK BACKGROUNDS)
+========================================================== */
+.mega-dropdown-menu {
+  position: absolute;
+  top: 100%; /* Sits cleanly flush against the link container to fix visual flickering */
+  left: -20px;
+  background-color: #140526; /* Deepest, solid opaque dark purple for extreme readability */
+  border: 2px solid #15E3C4; /* Clear, sharp aqua border edge definition */
+  border-radius: 12px;
+  padding: 24px;
+  width: 680px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modifier structure layout for split dashboard panels (Why Upwork) */
+.mega-dropdown-menu.double-panel {
+  width: 820px;
+  flex-direction: row;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Left Sidebar Panel inside split configurations */
+.dropdown-branding-panel {
+  width: 240px;
+  background-color: #270d45; /* Fully solid, medium card-purple contrast block */
+  padding: 32px 24px;
+  border-right: 2px solid #15E3C4;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-branding-panel h3 {
+  color: #FFFFFF; /* High-contrast crisp white */
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.dropdown-branding-panel p {
+  color: #15E3C4; /* Sharp theme aqua text */
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Right Content Grid Section Container */
+.dropdown-content-panel {
+  flex: 1;
+  padding: 32px 24px;
+  background-color: #140526; /* Fully solid background alignment */
+}
+
+/* Internal Section Header Category Titles */
+.dropdown-category-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #15E3C4;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-left: 6px;
+}
+
+/* Grid Matrix Layout Rules */
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  row-gap: 16px;
+}
+
+/* Individual Selectable Grid Block Entries */
+.dropdown-grid-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+/* Solid background change indicator on interaction mouseovers */
+.dropdown-grid-item:hover {
+  background-color: #7E2FD5; /* Bright branding purple focus zone */
+}
+
+.dropdown-grid-item .item-title {
+  color: #FFFFFF; /* High contrast solid pure white */
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.dropdown-grid-item .item-desc {
+  color: #E2D7F5; /* Legible solid silver-purple secondary reading tier */
+  font-size: 12.5px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* Force elements inside item grid row blocks to full white during mouse focus states */
+.dropdown-grid-item:hover .item-title,
+.dropdown-grid-item:hover .item-desc {
+  color: #FFFFFF;
+}
+
+/* ==========================================================
+   RIGHT SECTION: UTILITIES, SEARCH & AUTHENTICATION
+========================================================== */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Pill Box Search Wrap Shield */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #15E3C4;
+  border-radius: 24px;
+  padding: 6px 14px;
+  width: 260px;
+  color: #15E3C4;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  color: #15E3C4;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #15E3C4;
+  width: 100%;
+  font-size: 14px;
+}
+
+.search-input::placeholder {
+  color: #15E3C4;
+  opacity: 0.6;
+}
+
+.search-divider {
+  width: 1px;
+  height: 18px;
+  background-color: #15E3C4;
+  margin: 0 10px;
+  opacity: 0.5;
+}
+
+.search-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Authentication Trigger Blocks */
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-login {
+  color: #15E3C4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.btn-login:hover {
+  opacity: 0.8;
+}
+
+/* High Visibility Pill Button */
+.btn-signup {
+  background-color: #15E3C4;
+  color: #7E2FD5; 
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 20px;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn-signup:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(21, 227, 196, 0.4);
+}
