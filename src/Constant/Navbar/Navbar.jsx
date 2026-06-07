@@ -1,11 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [searchType, setSearchType] = useState('مستقلين');
-  const [activeMenu, setActiveMenu] = useState(null); 
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login status dynamically
   const navbarRef = useRef(null);
+  const navigate = useNavigate();
+
+  // Listen for authentication changes on mount
+  useEffect(() => {
+    const authStatus = localStorage.getItem("isAuthenticated") === "true";
+    setIsLoggedIn(authStatus);
+  }, []);
 
   const handleMenuClick = (menuName, e) => {
     e.stopPropagation();
@@ -18,6 +27,20 @@ const Navbar = () => {
 
   const handleMouseLeave = () => {
     setActiveMenu(null);
+  };
+
+  const handleProtectedAccess = () => {
+    if (isLoggedIn) {
+      navigate("/choices");
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated");
+    setIsLoggedIn(false); // Update state instantly without needing a full reload
+    navigate("/");
   };
 
   useEffect(() => {
@@ -48,7 +71,7 @@ const Navbar = () => {
   const findWorkCategories = [
     { title: "تطوير المواقع الإلكترونية", desc: "بناء المواقع من الصفر أو باستخدام القوالب" },
     { title: "البرمجة وكتابة الكود", desc: "البرمجة عبر مختلف اللغات والبيئات البرمجية" },
-    { title: "تطوير البرمجيات", desc: "بناء المنتجات البرمجية والأدوات التقنية" },
+    { title: "تتطوير البرمجيات", desc: "بناء المنتجات البرمجية والأدوات التقنية" },
     { title: "برمجة بايثون (Python)", desc: "كتابة السكربتات، الأتمتة، والبرمجة بلغة بايثون" },
     { title: "تطوير الواجهات الأمامية", desc: "بناء واجهات تفاعلية يفضلها المستخدمون" },
     { title: "تصميم الويب", desc: "تصميم مواقع إلكترونية نظيفة، عصرية وعملية" },
@@ -77,17 +100,17 @@ const Navbar = () => {
         <div className="navbar-logo">
           <img src={logo} alt="شعار صمملي" />
         </div>
-        
+
         <ul className="navbar-links">
           {/* القائمة 1: توظيف المستقلين */}
-          <li 
+          <li
             className={`dropdown ${activeMenu === 'hire-talent' ? 'active' : ''}`}
             onClick={(e) => handleMenuClick('hire-talent', e)}
             onMouseEnter={() => handleMouseEnter('hire-talent')}
             onMouseLeave={handleMouseLeave}
           >
             وظّف مستقلين <span className="arrow">{activeMenu === 'hire-talent' ? '▲' : '▼'}</span>
-            
+
             {activeMenu === 'hire-talent' && (
               <div className="mega-dropdown-menu" onClick={(e) => e.stopPropagation()}>
                 <div className="dropdown-category-title">التطوير وتكنولوجيا المعلومات</div>
@@ -102,15 +125,16 @@ const Navbar = () => {
               </div>
             )}
           </li>
+          
           {/* القائمة 2: ابحث عن عمل */}
-          <li 
+          <li
             className={`dropdown ${activeMenu === 'find-work' ? 'active' : ''}`}
             onClick={(e) => handleMenuClick('find-work', e)}
             onMouseEnter={() => handleMouseEnter('find-work')}
             onMouseLeave={handleMouseLeave}
           >
             ابحث عن عمل <span className="arrow">{activeMenu === 'find-work' ? '▲' : '▼'}</span>
-            
+
             {activeMenu === 'find-work' && (
               <div className="mega-dropdown-menu" onClick={(e) => e.stopPropagation()}>
                 <div className="dropdown-category-title">التطوير وتكنولوجيا المعلومات</div>
@@ -127,14 +151,14 @@ const Navbar = () => {
           </li>
 
           {/* القائمة 3: لماذا صمملي */}
-          <li 
+          <li
             className={`dropdown ${activeMenu === 'why-upwork' ? 'active' : ''}`}
             onClick={(e) => handleMenuClick('why-upwork', e)}
             onMouseEnter={() => handleMouseEnter('why-upwork')}
             onMouseLeave={handleMouseLeave}
           >
             لماذا صمملي؟ <span className="arrow">{activeMenu === 'why-upwork' ? '▲' : '▼'}</span>
-            
+
             {activeMenu === 'why-upwork' && (
               <div className="mega-dropdown-menu double-panel" onClick={(e) => e.stopPropagation()}>
                 {/* اللوحة الإعلانية الجانبية */}
@@ -148,7 +172,12 @@ const Navbar = () => {
                   <div className="dropdown-category-title">المصادر</div>
                   <div className="dropdown-grid">
                     {whyUpworkResources.filter(r => r.category === "المصادر").map((item, idx) => (
-                      <div key={idx} className="dropdown-grid-item">
+                      <div 
+                        key={idx} 
+                        className="dropdown-grid-item" 
+                        onClick={handleProtectedAccess}
+                        style={{ cursor: 'pointer' }}
+                      >
                         <div className="item-title">{item.title}</div>
                         <div className="item-desc">{item.desc}</div>
                       </div>
@@ -158,7 +187,12 @@ const Navbar = () => {
                   <div className="dropdown-category-title" style={{ marginTop: '24px' }}>ما الجديد</div>
                   <div className="dropdown-grid">
                     {whyUpworkResources.filter(r => r.category === "ما الجديد").map((item, idx) => (
-                      <div key={idx} className="dropdown-grid-item">
+                      <div 
+                        key={idx} 
+                        className="dropdown-grid-item" 
+                        onClick={handleProtectedAccess}
+                        style={{ cursor: 'pointer' }}
+                      >
                         <div className="item-title">{item.title}</div>
                         <div className="item-desc">{item.desc}</div>
                       </div>
@@ -172,7 +206,6 @@ const Navbar = () => {
           <li className="nav-link-item">
             <a href="#build-website">صمم موقعك</a>
           </li>
-
 
           <li className="nav-link-item">
             <a href="#pricing">الأسعار</a>
@@ -197,8 +230,16 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-auth">
-          <a href="#login" className="btn-login">تسجيل الدخول</a>
-          <a href="#signup" className="btn-signup">إنشاء حساب</a>
+          {!isLoggedIn ? (
+            <>
+              <Link to="/login" className="btn-login">تسجيل الدخول</Link>
+              <Link to="/signup" className="btn-signup">إنشاء حساب</Link>
+            </>
+          ) : (
+            <button className="btn-signup btn-logout" onClick={handleLogout}>
+              تسجيل خروج
+            </button>
+          )}
         </div>
       </div>
     </nav>

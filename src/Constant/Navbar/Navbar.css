@@ -273,3 +273,14 @@
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(21, 227, 196, 0.4);
 }
+
+/* Styling for Logout Button */
+.navbar-auth .btn-logout {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

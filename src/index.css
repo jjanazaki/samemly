@@ -26,8 +26,8 @@ body {
   
   /* Global app adjustments */
   body, #root, .app {
-    padding: 10px; /* Reduces large desktop padding on mobile screens */
-    font-size: 14px; /* Slightly scales down text for readability */
+    padding: 0; /* Removed aggressive padding so content can use the full screen width */
+    font-size: 16px; /* Kept at standard 16px so text doesn't look tiny on phones */
   }
 
   /* Structural layouts (Changes multi-column grids/flexboxes to single column) */
@@ -37,8 +37,8 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 15px;
-    gap: 20px; /* Keeps even spacing between stacked sections */
+    padding: 0 16px; /* standard mobile edge spacing */
+    gap: 24px; /* Slightly increased spacing so elements don't feel squished together */
   }
 
   /* Images and Media (Prevents large assets from breaking the layout width) */
@@ -47,6 +47,7 @@ body {
   .responsive-media {
     max-width: 100%;
     height: auto;
+    display: block;
   }
 
   /* Forms and Inputs (Makes buttons and fields easier to tap on touchscreens) */
@@ -54,7 +55,8 @@ body {
   button, 
   .btn {
     width: 100%; /* Stacks buttons vertically at full width */
-    padding: 12px; /* Increases touch target size */
+    padding: 14px; /* Enhanced touch target size for comfortable finger tapping */
+    font-size: 16px; /* Prevents iOS Safari from auto-zooming when focusing inputs */
   }
 
 }
