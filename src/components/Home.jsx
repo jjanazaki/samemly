@@ -2,140 +2,140 @@ import React from 'react';
 import './Home.css';
 
 const Home = () => {
-  // 1. Profile Data
+  // 1. Profile Data (بيانات المستقلين)
   const freelancers = [
     {
       id: 1,
-      name: "Rohit K.",
-      location: "Solan, India",
-      rate: "$7/hr",
+      name: "روهيت ك.",
+      location: "سولان، الهند",
+      rate: "7$/ساعة",
       rating: "4.9",
-      jobs: "111 jobs",
-      bio: "Highly Skilled Wordpress, Shopify, Magento, Wix, Webflow Web Developer, Laravel, PHP, GoHighLevel (GHL) I am a...",
-      skills: ["Web Development", "JavaScript", "WordPress"],
+      jobs: "111 وظيفة",
+      bio: "مطور ويب ماهر للغاية في ووردبريس، شوبيفاي، ماجينتو، ويكس، ويب فلو، لارفيل، بي إتش بي، وجو هاي ليفل...",
+      skills: ["تطوير الويب", "جافا سكريبت", "ووردبريس"],
       avatar: "https://via.placeholder.com/60"
     },
     {
       id: 2,
-      name: "Ved P.",
-      location: "Solan, India",
-      rate: "$10/hr",
+      name: "فيد ب.",
+      location: "سولان، الهند",
+      rate: "10$/ساعة",
       rating: "4.9",
-      jobs: "734 jobs",
-      bio: "I am a professional Web developer & Designer, Website Developer working with WordPress, Shopify, Wix, Wix Studio,...",
-      skills: ["Web Development", "JavaScript", "Responsive Design"],
+      jobs: "734 وظيفة",
+      bio: "مطور ومصمم ويب محترف، أعمل على منصات ووردبريس، شوبيفاي، ويكس، ويكس ستوديو...",
+      skills: ["تطوير الويب", "جافا سكريبت", "التصميم المتجاوب"],
       avatar: "https://via.placeholder.com/60"
     },
     {
       id: 3,
-      name: "Tristan H.",
-      location: "Highlands Ranch, Colorado",
-      rate: "$70/hr",
+      name: "تريستان هـ.",
+      location: "هايلاندز رانتش، كولورادو",
+      rate: "70$/ساعة",
       rating: "5.0",
-      jobs: "58 jobs",
-      bio: "Hello! I have been studying Computer Science and Web Development for 8 years and primarily work with WordPress. I am...",
-      skills: ["JavaScript", "CSS", "PHP"],
+      jobs: "58 وظيفة",
+      bio: "مرحباً! أدرس علوم الحاسب وتطوير الويب منذ 8 سنوات وأعمل بشكل أساسي مع ووردبريس...",
+      skills: ["جافا سكريبت", "سي إس إس", "بي إتش بي"],
       avatar: "https://via.placeholder.com/60"
     },
     {
       id: 4,
-      name: "Mohammad Shadab S.",
-      location: "New Delhi, India",
-      rate: "$13/hr",
+      name: "محمد شاداب س.",
+      location: "نيودلهي، الهند",
+      rate: "13$/ساعة",
       rating: "5.0",
-      jobs: "33 jobs",
-      bio: "🌍 IAAP CPWA-Certified Accessibility Consultant & Developer specializing in WCAG 2.2 AA audits, ADA compliance,...",
-      skills: ["Web Development", "JavaScript", "React"],
+      jobs: "33 وظيفة",
+      bio: "استشاري ومطور معتمد لإمكانية الوصول (IAAP CPWA) متخصص في تدقيق معايير WCAG 2.2 AA والامتثال لقوانين ADA...",
+      skills: ["تطوير الويب", "جافا سكريبت", "رياكت"],
       avatar: "https://via.placeholder.com/60"
     },
     {
       id: 5,
-      name: "Aleksandr Z.",
-      location: "New York, New York",
-      rate: "$30/hr",
+      name: "ألكسندر ز.",
+      location: "نيويورك، نيويورك",
+      rate: "30$/ساعة",
       rating: "4.9",
-      jobs: "816 jobs",
-      bio: "Delivering visually stunning, high-impact Web Design that drives real results! 🏆 With over 14 years of experience, we've launched...",
-      skills: ["Responsive Design", "Website", "Web Design"],
+      jobs: "816 وظيفة",
+      bio: "تقديم تصميمات ويب مذهلة وبصرية ذات تأثير قوي يحقق نتائج حقيقية! خبرة تزيد عن 14 عاماً...",
+      skills: ["التصميم المتجاوب", "مواقع إلكترونية", "تصميم الويب"],
       avatar: "https://via.placeholder.com/60"
     },
     {
       id: 6,
-      name: "Edwin J.",
-      location: "Queens County, New York",
-      rate: "$40/hr",
+      name: "إدوين ج.",
+      location: "مقاطعة كوينز، نيويورك",
+      rate: "40$/ساعة",
       rating: "4.9",
-      jobs: "160 jobs",
-      bio: "I design and build websites. 15 years across WordPress, Webflow, Wix, Shopify, and Framer, with 117 completed jobs and $200K...",
-      skills: ["Web Development", "WordPress", "Web Design"],
+      jobs: "160 وظيفة",
+      bio: "أقوم بتصميم وبناء المواقع الإلكترونية. 15 عاماً من الخبرة عبر ووردبريس، ويب فلو، ويكس، وشوبيفاي...",
+      skills: ["تطوير الويب", "ووردبريس", "تصميم الويب"],
       avatar: "https://via.placeholder.com/60"
     }
   ];
 
-  // 2. How it works Data
+  // 2. How it works Data (كيف يعمل الموقع)
   const steps = [
-    { id: 1, title: "Post a job for free", description: "Tell us what you need. Create your own job post or generate one with AI then filter talent matches.", icon: "📝" },
-    { id: 2, title: "Hire top talent fast", description: "Consult, interview, and hire quickly, so you can meet the freelancers you're excited about.", icon: "🤝" },
-    { id: 3, title: "Collaborate easily", description: "Use Upwork to chat or video call, share files, and track project progress right from the app.", icon: "💻" },
-    { id: 4, title: "Payment simplified", description: "Manage payments in one place with flexible billing options. Only pay for approved work, hourly or by milestone.", icon: "💳" }
+    { id: 1, title: "انشر وظيفة مجاناً", description: "أخبرنا بما تحتاجه. أنشئ منشور وظيفتك أو استعن بالذكاء الاصطناعي لتوليده، ثم قم بتصفية المستقلين المناسبين.", icon: "📝" },
+    { id: 2, title: "وظّف أفضل الكفاءات بسرعة", description: "استشر، وقابل، ووظّف بسرعة لتلتقي بالمستقلين الذين تطلع للعمل معهم.", icon: "🤝" },
+    { id: 3, title: "تعاون بكل سهولة", description: "استخدم صمملي للدردشة أو مكالمات الفيديو، ومشاركة الملفات، ومتابعة تقدم المشروع مباشرة من التطبيق.", icon: "💻" },
+    { id: 4, title: "دفعات مالية مبسطة", description: "إدارة المدفوعات في مكان واحد مع خيارات فواتير مرنة. ادفع فقط مقابل العمل المعتمد، سواء بالساعة أو بالمشروع.", icon: "💳" }
   ];
 
-  // 3. Testimonials Data
+  // 3. Testimonials Data (آراء العملاء)
   const testimonials = [
     {
       id: 1,
-      quote: "Upwork provides an umbrella-level of security. I can see a talent's work history and ratings. I can hold payments in escrow. I can communicate through Upwork Messages instead of working through my email address.",
-      author: "Kim Darling",
-      company: "Emerald Tiger",
-      initials: "KD"
+      quote: "يوفر صمملي مستوى عالٍ من الأمان. يمكنني رؤية تاريخ عمل المستقل وتقييماته، وحفظ المدفوعات في نظام الضمان، والتواصل عبر الرسائل الداخلية بدلاً من البريد الإلكتروني.",
+      author: "كيم دارلينج",
+      company: "إميرالد تايجر",
+      initials: "كد"
     },
     {
       id: 2,
-      quote: "Upwork is the best platform to hire skilled professionals when we're not looking for a full-time employee. All the companies in our portfolio use Upwork to find talent across a wide range of fields.",
-      author: "David Merry",
-      company: "Kinetic Investments",
-      initials: "DM"
+      quote: "منصة صمملي هي الأفضل لتوظيف محترفين ومستقلين مهرة عندما لا نبحث عن موظف بدوام كامل. جميع الشركات في محفظتنا تستخدم الموقع للعثور على المبدعين.",
+      author: "ديفيد ميري",
+      company: "كينيتك للاستثمار",
+      initials: "دم"
     }
   ];
 
-  // 4. Resources Data
+  // 4. Resources Data (المصادر والمقالات)
   const resources = [
-    { id: 1, title: "Cost to hire a Web Developer", description: "Explore typical Web Developer rates and what businesses pay to hire top talent.", image: "https://via.placeholder.com/300x150" },
-    { id: 2, title: "Web Developer job description template", description: "Get tips to write a job post that attracts qualified Web Developers.", image: "https://via.placeholder.com/300x150" },
-    { id: 3, title: "Web Developer interview questions", description: "Top interview questions to help you hire the right Web Developers, faster.", image: "https://via.placeholder.com/300x150" }
+    { id: 1, title: "تكلفة توظيف مطور ويب", description: "استكشف أسعار مطوري الويب المعتادة وما تدفعه الشركات لتوظيف أفضل الكفاءات.", image: "https://via.placeholder.com/300x150" },
+    { id: 2, title: "نموذج الوصف الوظيفي لمطور الويب", description: "احصل على نصائح لكتابة منشور وظيفة يجذب مطوري الويب المؤهلين.", image: "https://via.placeholder.com/300x150" },
+    { id: 3, title: "أسئلة المقابلة الشخصية لمطوري الويب", description: "أبرز أسئلة المقابلات لمساعدتك في توظيف مطور الويب المناسب بشكل أسرع.", image: "https://via.placeholder.com/300x150" }
   ];
 
-  // 5. Pricing Table Data
+  // 5. Pricing Table Data (جدول الأسعار التقديرية)
   const pricingData = [
     {
-      title: "Simple website updates",
-      cost: "$250-$1,500 /project",
-      level: "Entry- to mid-level",
-      details: ["Bug fixes", "Minor feature additions", "Content updates"]
+      title: "تحديثات بسيطة للموقع",
+      cost: "250$ - 1,500$ / للمشروع",
+      level: "مستوى مبتدئ إلى متوسط",
+      details: ["إصلاح الأخطاء البرمجية", "إضافة ميزات بسيطة", "تحديث المحتوى"]
     },
     {
-      title: "Ongoing website maintenance",
-      cost: "$500-$2,500 /month",
-      level: "Mid- to senior-level",
-      details: ["Regular updates", "Security patches", "Performance monitoring"]
+      title: "صيانة مستمرة للموقع",
+      cost: "500$ - 2,500$ / شهرياً",
+      level: "مستوى متوسط إلى محترف",
+      details: ["تحديثات دورية", "سد الثغرات الأمنية", "مراقبة الأداء"]
     },
     {
-      title: "Custom website development",
-      cost: "$2,500-$15,000 /project",
-      level: "Mid- to senior-level",
-      details: ["Multi-page custom website", "CMS integration", "Basic SEO setup"]
+      title: "تطوير موقع إلكتروني مخصص",
+      cost: "2,500$ - 15,000$ / للمشروع",
+      level: "مستوى متوسط إلى محترف",
+      details: ["موقع مخصص متعدد الصفحات", "ربط نظام إدارة المحتوى (CMS)", "تهيئة أساسية لمحركات البحث (SEO)"]
     },
     {
-      title: "Web application development",
-      cost: "$8,000-$50,000 /project",
-      level: "Senior-level or specialist",
-      details: ["Custom web apps", "User authentication", "API integrations"]
+      title: "تطوير تطبيقات الويب",
+      cost: "8,000$ - 50,000$ / للمشروع",
+      level: "مستوى محترف أو متخصص",
+      details: ["تطبيقات ويب مخصصة", "نظام تسجيل دخول المستخدمين", "ربط واجهات برمجة التطبيقات (APIs)"]
     },
     {
-      title: "Enterprise web solutions",
-      cost: "$255,000-$150,000+ /project",
-      level: "Expert or specialist",
-      details: ["Scalable architecture", "Complex integrations", "Technical documentation"]
+      title: "حلول الويب للمؤسسات الضخمة",
+      cost: "25,000$ - 150,000$+ / للمشروع",
+      level: "خبير أو متخصص دقيق",
+      details: ["بنية تحتية قابلة للتوسع", "عمليات ربط معقدة", "التوثيق البرمجي والتقني"]
     }
   ];
 
@@ -145,14 +145,14 @@ const Home = () => {
         
         {/* SECTION 1: HERO HEADER */}
         <header className="hero-section">
-          <h1 className="hero-title">Hire the Best Web Developers</h1>
+          <h1 className="hero-title">وظّف أفضل مطوري الويب</h1>
           <div className="rating-summary">
-            <span>Clients rate our Web Developers</span>
+            <span>تقييم العملاء لمطورينا</span>
             <div className="stars">★★★★★</div>
             <span className="rating-score">4.8/5</span>
           </div>
-          <p className="review-count">Based on 75,309 client reviews</p>
-          <button className="btn-main">Hire freelancers</button>
+          <p className="review-count">بناءً على 75,309 تقييم من العملاء</p>
+          <button className="btn-main">وظّف مستقلين الآن</button>
         </header>
 
         {/* SECTION 2: PROFILES GRID */}
@@ -176,22 +176,22 @@ const Home = () => {
                 {f.skills.map((skill, idx) => (
                   <span key={idx} className="skill-tag">{skill}</span>
                 ))}
-                <span className="tag-arrow">˃</span>
+                <span className="tag-arrow">˂</span>
               </div>
-              <button className="btn-profile">See profile</button>
+              <button className="btn-profile">عرض الملف الشخصي</button>
             </div>
           ))}
         </main>
 
         <div className="view-more-container">
-          <button className="btn-secondary">View more freelancers</button>
+          <button className="btn-secondary">عرض المزيد من المستقلين</button>
         </div>
 
         <hr className="section-divider" />
 
         {/* SECTION 3: HOW IT WORKS */}
         <section className="section-block how-it-works-section">
-          <h2 className="section-title">How it works</h2>
+          <h2 className="section-title">كيف يعمل الموقع</h2>
           <div className="steps-grid">
             {steps.map((s) => (
               <div key={s.id} className="step-card">
@@ -208,7 +208,7 @@ const Home = () => {
         {/* SECTION 4: TESTIMONIALS */}
         <section className="section-block testimonials-section">
           <div className="testimonials-header">
-            <h2 className="section-title">Don't just take our word for it</h2>
+            <h2 className="section-title">لا تكتفِ بسماع رأينا فقط</h2>
             <div className="carousel-arrows">
               <button className="arrow-btn">←</button>
               <button className="arrow-btn active">→</button>
@@ -234,7 +234,7 @@ const Home = () => {
 
         {/* SECTION 5: RESOURCES */}
         <section className="section-block resources-section">
-          <h2 className="section-title">Resources to help you hire</h2>
+          <h2 className="section-title">مصادر تساعدك في التوظيف</h2>
           <div className="resources-grid">
             {resources.map((r) => (
               <div key={r.id} className="resource-card">
@@ -250,9 +250,9 @@ const Home = () => {
 
         {/* SECTION 6: COST & HIRING GUIDE TEXT BLOCK */}
         <section className="section-block guide-section">
-          <h2 className="guide-main-title">How much does hiring a web developer cost?</h2>
+          <h2 className="guide-main-title">ما هي تكلفة توظيف مطور ويب؟</h2>
           <p className="guide-paragraph">
-            Independent web developers on Upwork typically charge <span className="inline-link">$15-$50 per hour</span>, with rates varying according to the freelancer's experience and skillset, and the scope and industry of the project. The following chart offers the average cost for hiring a web developer on Upwork for common projects.
+            يتراوح أجر مطوري الويب المستقلين على منصة صمملي عادةً بين <span className="inline-link">15$ إلى 50$ في الساعة</span>، وتختلف الأسعار بناءً على خبرة المستقل ومهاراته، بالإضافة إلى حجم المشروع ومجاله. يوضح الجدول التالي متوسط التكلفة لتوظيف مطور ويب في المشاريع الشائعة.
           </p>
 
           <div className="pricing-container">
@@ -276,23 +276,23 @@ const Home = () => {
             ))}
           </div>
 
-          <h2 className="guide-main-title" style={{ marginTop: '60px' }}>Web developer hiring guide</h2>
+          <h2 className="guide-main-title" style={{ marginTop: '60px' }}>دليل توظيف مطوري الويب</h2>
           <p className="guide-paragraph">
-            Web developers are the architects of the digital landscape, building the websites and applications that drive modern business. Whether creating a simple landing page or a complex e-commerce platform, these professionals translate creative concepts into functional, user-friendly digital experiences. Hiring a skilled developer helps ensure your project is built on a solid technical foundation, optimized for performance, and capable of scaling with your business needs.
+            مطورو الويب هم مهندسو المشهد الرقمي، فهم من يقومون ببناء المواقع والتطبيقات التي تدير الأعمال الحديثة. سواء كنت تبحث عن إنشاء صفحة هبوط بسيطة أو منصة تجارة إلكترونية معقدة، فإن هؤلاء المحترفين يحولون الأفكار الإبداعية إلى تجارب رقمية وظيفية وسهلة الاستخدام. يساعد توظيف مطور ماهر في ضمان بناء مشروعك على أساس تقني متين، ومحسن للأداء، وقابل للتوسع مع نمو أعمالك.
           </p>
 
-          <h3 className="guide-sub-title">What does a web developer do?</h3>
+          <h3 className="guide-sub-title">ماذا يفعل مطور الويب؟</h3>
           <p className="guide-paragraph">
-            A web developer builds and maintains websites, web applications, and other online platforms. Their work centers around everything from creating layouts and interfaces to <span className="inline-link">managing databases</span> and server-side logic. Developers might focus on <span className="inline-link">front-end development</span>, which deals with what users see and interact with, or <span className="inline-link">back-end development</span>, which powers the functionality behind the scenes. They may also do both as <span className="inline-link">full-stack developers</span>.
+            يقوم مطور الويب ببناء وصيانة المواقع الإلكترونية، تطبيقات الويب، والمنصات الأخرى عبر الإنترنت. يرتكز عملهم على كل شيء بدءاً من إنشاء الواجهات والتصميمات وحتى <span className="inline-link">إدارة قواعد البيانات</span> ومنطق الخادم (Server-side). قد يركز المطورون على <span className="inline-link">تطوير الواجهات الأمامية (Front-end)</span>، والتي تتعامل مع ما يراه المستخدم ويتفاعل معه، أو <span className="inline-link">تطوير الواجهات الخلفية (Back-end)</span>، والتي تدير العمليات خلف الكواليس. ويمكنهم أيضاً القيام بالأمرين معاً كـ <span className="inline-link">مطوري الويب الشاملين (Full-stack)</span>.
           </p>
           <p className="guide-paragraph">
-            Most front-end work relies on coding languages like HTML, <span className="inline-link">CSS</span>, and JavaScript, while back-end development might involve languages and technologies like Python, Node.js, or PHP. A good developer knows how to connect the front and back ends of a site seamlessly and may also be involved in tasks like API integration, content management system customization, or third-party plugin implementation.
+            يعتمد معظم عمل الواجهات الأمامية على لغات البرمجة مثل HTML و <span className="inline-link">CSS</span> وجافا سكريبت، بينما قد يشمل تطوير الواجهات الخلفية لغات وتقنيات مثل بايثون، نود جي إس (Node.js)، أو بي إتش بي (PHP). يعرف المطور الجيد كيفية ربط الواجهات الأمامية والخلفية للموقع بسلاسة، وقد يشارك أيضاً في مهام مثل ربط واجهات برمجة التطبيقات (APIs)، أو تخصيص أنظمة إدارة المحتوى، أو دمج الإضافات الخارجية.
           </p>
           <p className="guide-paragraph">
-            In terms of qualifications, many web developers have hands-on experience with modern frameworks like React, Angular, or Vue.js. Familiarity with version control systems like <span className="inline-link">Git</span> is also essential for collaboration and project tracking. Developers should also understand web performance optimization, accessibility standards, and responsive <span className="inline-link">design principles</span> to make sure that websites function well across all devices.
+            من حيث المؤهلات، يتمتع العديد من مطوري الويب بخبرة عملية في التعامل مع أطر العمل الحديثة مثل رياكت (React)، أو أنجولار (Angular)، أو فيو (Vue.js). يعد الإلمام بأنظمة التحكم في الإصدارات مثل <span className="inline-link">Git</span> أمراً ضرورياً للتعاون وتتبع المشاريع. يجب أن يفهم المطورون أيضاً تحسين أداء الويب، ومعايير إمكانية الوصول، ومبادئ <span className="inline-link">التصميم المتجاوب</span> لضمان عمل المواقع بشكل جيد على جميع الأجهزة.
           </p>
           <p className="guide-paragraph">
-            Beyond technical skills, successful web developers are strong problem-solvers, pay attention to detail, and are willing to adapt. While formal education in computer science or web development can be helpful, many developers are self-taught or come from bootcamp programs, building their qualifications through portfolios and real-world experience.
+            بعيداً عن المهارات التقنية، يتميز مطورو الويب الناجحون بقدرتهم العالية على حل المشكلات، والاهتمام بالتفاصيل، والمرونة في التكيف. في حين أن التعليم الأكاديمي في علوم الحاسب أو تطوير الويب يمكن أن يكون مفيداً، فإن العديد من المطورين يعتمدون على التعلم الذاتي أو يتخرجون من المعسكرات البرمجية (Bootcamps)، حيث يبنون مؤهلاتهم من خلال معرض أعمالهم وتجاربهم في العالم الحقيقي.
           </p>
         </section>
 
@@ -300,54 +300,54 @@ const Home = () => {
 
         {/* SECTION 7: FIND MORE FREELANCERS DIRECTORY */}
         <section className="section-block directory-section">
-          <h2 className="directory-main-title">Find more freelancers</h2>
+          <h2 className="directory-main-title">ابحث عن المزيد من المستقلين</h2>
           
-          <h3 className="directory-sub-title">Similar Web Developer Skills</h3>
+          <h3 className="directory-sub-title">مهارات مشابهة لمطوري الويب</h3>
           <div className="directory-links-grid">
-            <div>Sitefinity Developers</div>
-            <div>Full Stack .NET Developers</div>
-            <div>ColdFusion Developers</div>
-            <div>Hugo Developers</div>
-            <div>Full Stack PHP Developers</div>
-            <div>CodeIgniter Developers</div>
-            <div>Craft CMS Developers</div>
-            <div>JavaScript Developers</div>
-            <div>Front-End Developers</div>
-            <div>Web Component Developers</div>
-            <div>Ember.js Developers & Programmers</div>
-            <div>Expression Engine Specialists</div>
-            <div>Haml Developers</div>
-            <div>AngularJS Developers</div>
-            <div>Backbone.js Developers</div>
-            <div>Expo.io Developers</div>
+            <div>مطورو سايت فينيتي (Sitefinity)</div>
+            <div>مطورو دوت نت الشاملين (.NET)</div>
+            <div>مطورو كولد فيوجن (ColdFusion)</div>
+            <div>مطورو هوجو (Hugo)</div>
+            <div>مطورو بي إتش بي الشاملين (PHP)</div>
+            <div>مطورو كود إجنايتر (CodeIgniter)</div>
+            <div>مطورو كرافت سي إم إس (Craft CMS)</div>
+            <div>مطورو جافا سكريبت</div>
+            <div>مطورو الواجهات الأمامية</div>
+            <div>مطورو مكونات الويب (Web Components)</div>
+            <div>مطورو ومبرمجو إمبر جي إس (Ember.js)</div>
+            <div>متخصصو إكسبريسشن إنجين</div>
+            <div>مطورو هامل (Haml)</div>
+            <div>مطورو أنجولار جي إس (AngularJS)</div>
+            <div>مطورو باكمان جي إس (Backbone.js)</div>
+            <div>مطورو إكسبو (Expo.io)</div>
           </div>
 
-          <h3 className="directory-sub-title" style={{ marginTop: '40px' }}>Top Countries for Web Developers</h3>
+          <h3 className="directory-sub-title" style={{ marginTop: '40px' }}>أبرز الدول لمطوري الويب</h3>
           <div className="directory-links-grid">
-            <div>ColdFusion Developers in Brazil</div>
-            <div>ColdFusion Developers in India</div>
-            <div>ColdFusion Developers in Pakistan</div>
-            <div>Adobe Flex Developers in Ukraine</div>
-            <div>JavaScript Developers in Switzerland</div>
-            <div>JavaScript Developers in Uzbekistan</div>
-            <div>JavaScript Developers in Sri Lanka</div>
-            <div>JavaScript Developers in Tunisia</div>
-            <div>JavaScript Developers in Ukraine</div>
-            <div>JavaScript Developers in Vietnam</div>
-            <div>JavaScript Developers in Australia</div>
-            <div>JavaScript Developers in Israel</div>
-            <div>JavaScript Developers in Chile</div>
-            <div>JavaScript Developers in Indonesia</div>
-            <div>JavaScript Developers in Brazil</div>
-            <div>JavaScript Developers in Belgium</div>
+            <div>مطورو كولد فيوجن في البرازيل</div>
+            <div>مطورو كولد فيوجن في الهند</div>
+            <div>مطورو كولد فيوجن في باكستان</div>
+            <div>مطورو أدوبي فليكس في أوكرانيا</div>
+            <div>مطورو جافا سكريبت في سويسرا</div>
+            <div>مطورو جافا سكريبت في أوزبكستان</div>
+            <div>مطورو جافا سكريبت في سريلانكا</div>
+            <div>مطورو جافا سكريبت في تونس</div>
+            <div>مطورو جافا سكريبت في أوكرانيا</div>
+            <div>مطورو جافا سكريبت في فيتنام</div>
+            <div>مطورو جافا سكريبت في أستراليا</div>
+            <div>مطورو جافا سكريبت في إسرائيل</div>
+            <div>مطورو جافا سكريبت في تشيلي</div>
+            <div>مطورو جافا سكريبت في إندونيسيا</div>
+            <div>مطورو جافا سكريبت في البرازيل</div>
+            <div>مطورو جافا سكريبت في بلجيكا</div>
           </div>
         </section>
 
         {/* SECTION 8: GLOBAL HIRE HERO BANNER */}
         <section className="section-block global-hire-banner">
           <div className="global-banner-left">
-            <h2>Hire anyone, anywhere.</h2>
-            <button className="btn-banner-white">Sign up for free</button>
+            <h2>وظّف أي شخص، من أي مكان.</h2>
+            <button className="btn-banner-white">سجّل مجاناً</button>
           </div>
           <div className="global-banner-right">
             <div className="globe-illustration">🌍</div>
@@ -360,66 +360,66 @@ const Home = () => {
       <footer className="global-footer">
         <div className="footer-columns">
           <div className="footer-col">
-            <h4>For Clients</h4>
+            <h4>للعملاء</h4>
             <ul>
-              <li>How to hire</li>
-              <li>Talent Marketplace</li>
-              <li>Project Catalog</li>
-              <li>Hire an agency</li>
-              <li>Enterprise</li>
-              <li>Business Plus</li>
-              <li>Any Hire</li>
-              <li>Contract-to-hire</li>
-              <li>Direct Contracts</li>
-              <li>Hire worldwide</li>
-              <li>Hire in the USA</li>
+              <li>كيفية التوظيف</li>
+              <li>سوق المواهب</li>
+              <li>كتالوج المشاريع</li>
+              <li>توظيف وكالة</li>
+              <li>المؤسسات والشركات الكبيره</li>
+              <li>باقة الأعمال المتميزة</li>
+              <li>خدمات التوظيف الشاملة</li>
+              <li>التعاقد بغرض التثبيت</li>
+              <li>العقود المباشرة</li>
+              <li>التوظيف حول العالم</li>
+              <li>التوظيف في الولايات المتحدة</li>
             </ul>
           </div>
           <div className="footer-col">
-            <h4>For Talent</h4>
+            <h4>للمستقلين</h4>
             <ul>
-              <li>How to find work</li>
-              <li>Direct Contracts</li>
-              <li>Find freelance jobs worldwide</li>
-              <li>Find freelance jobs in the USA</li>
-              <li>Win work with ads</li>
-              <li>Exclusive resources with Freelancer Plus</li>
+              <li>كيفية العثور على عمل</li>
+              <li>العقود المباشرة</li>
+              <li>البحث عن وظائف مستقلة عالمياً</li>
+              <li>البحث عن وظائف مستقلة في أمريكا</li>
+              <li>افتح فرص العمل بالإعلانات</li>
+              <li>مصادر حصرية مع باقة المستقل بلس</li>
             </ul>
           </div>
           <div className="footer-col">
-            <h4>Resources</h4>
+            <h4>المصادر</h4>
             <ul>
-              <li>Help & support</li>
-              <li>Success stories</li>
-              <li>Upwork reviews</li>
-              <li>Resources</li>
-              <li>Blog</li>
-              <li>Affiliate program</li>
-              <li>Refer a client</li>
-              <li>Free Business Tools</li>
-              <li>Release notes</li>
+              <li>المساعدة والدعم</li>
+              <li>قصص النجاح</li>
+              <li>آراء وتقييمات صمملي</li>
+              <li>المصادر التعليمية</li>
+              <li>المدونة</li>
+              <li>برنامج التسويق بالعمولة</li>
+              <li>دعوة عميل</li>
+              <li>أدوات أعمال مجانية</li>
+              <li>ملاحظات التحديثات</li>
             </ul>
           </div>
           <div className="footer-col">
-            <h4>Company</h4>
+            <h4>الشركة</h4>
             <ul>
-              <li>About us</li>
-              <li>Leadership</li>
-              <li>Investor relations</li>
-              <li>Careers</li>
-              <li>Our impact</li>
-              <li>Press</li>
-              <li>Contact us</li>
-              <li>Partners</li>
-              <li>Trust, safety & security</li>
-              <li>Modern slavery statement</li>
+              <li>من نحن</li>
+              <li>القيادة</li>
+              <li>علاقات المستثمرين</li>
+              <li>الوظائف</li>
+              <li>تأثيرنا الاجتماعي</li>
+              <li>الصحافة والإعلام</li>
+              <li>اتصل بنا</li>
+              <li>الشركاء</li>
+              <li>الثقة والأمان والخصوصية</li>
+              <li>بيان مناهضة العبودية الحديثة</li>
             </ul>
           </div>
         </div>
 
         <div className="footer-social-row">
           <div className="social-links">
-            <span>Follow us</span>
+            <span>تابعنا</span>
             <div className="social-icon">f</div>
             <div className="social-icon">in</div>
             <div className="social-icon">X</div>
@@ -428,7 +428,7 @@ const Home = () => {
             <div className="social-icon">👽</div>
           </div>
           <div className="mobile-apps">
-            <span>Mobile app</span>
+            <span>تطبيق الهاتف</span>
             <span className="app-icon">🍏</span>
             <span className="app-icon">🤖</span>
           </div>
@@ -437,14 +437,14 @@ const Home = () => {
         <hr className="footer-divider" />
 
         <div className="footer-bottom-legal">
-          <p className="copyright">© 2015 - 2026 Upwork® Global LLC</p>
+          <p className="copyright">© 2015 - 2026 صمملي® جلوبال ذ.م.م</p>
           <div className="legal-links">
-            <span>Terms of Service</span>
-            <span>Privacy Policy</span>
-            <span>CA Notice at Collection</span>
-            <span>Your Privacy Choices <span className="toggle-ui">☑</span></span>
-            <span>Accessibility</span>
-            <span>Sitemap</span>
+            <span>شروط الخدمة</span>
+            <span>سياسة الخصوصية</span>
+            <span>إشعار كاليفورنيا عند الجمع</span>
+            <span>خيارات الخصوصية الخاصة بك <span className="toggle-ui">☑</span></span>
+            <span>إمكانية الوصول للموقع</span>
+            <span>خريطة الموقع</span>
           </div>
         </div>
       </footer>

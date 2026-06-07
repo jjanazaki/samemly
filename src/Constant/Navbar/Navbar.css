@@ -3,6 +3,7 @@
 ========================================================== */
 .custom-navbar {
   display: flex;
+  flex-direction: row; 
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
@@ -14,11 +15,17 @@
   z-index: 9999;
 }
 
-/* Left Section: Logo & Main Navigation List Links */
-.navbar-left {
+/* الهياكل والمجموعات الرئيسية */
+.navbar-right {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .navbar-logo img {
@@ -28,6 +35,7 @@
 
 .navbar-links {
   display: flex;
+  align-items: center; /* تضمن محاذاة جميع العناصر والروابط على خط أفقي مستقيم وبدون انحراف */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -36,14 +44,33 @@
   font-weight: 500;
 }
 
-/* Dropdown list items & invisible bridge anchors to maintain focus */
+/* تنسيق الروابط المباشرة (مثل الأسعار وصمم موقعك) لمنع تأثير الطفو */
+.navbar-links .nav-link-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-links .nav-link-item a {
+  color: #15E3C4;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 14px 0;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-links .nav-link-item a:hover {
+  opacity: 0.8;
+}
+
+/* العناصر البرمجية للقوائم المنسدلة */
 .navbar-links .dropdown {
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 4px;
   position: relative;
-  padding: 14px 0; /* Creates an unbroken click/hover hit-box connection to the menu */
+  padding: 14px 0; 
   transition: opacity 0.2s ease;
 }
 
@@ -53,7 +80,7 @@
 
 .arrow {
   font-size: 8px;
-  margin-left: 2px;
+  margin-right: 4px;
 }
 
 /* ==========================================================
@@ -61,9 +88,9 @@
 ========================================================== */
 .mega-dropdown-menu {
   position: absolute;
-  top: 100%; /* Sits cleanly flush against the link container to fix visual flickering */
-  left: -20px;
-  background-color: #140526; /* Deepest, solid opaque dark purple for extreme readability */
+  top: 100%; 
+  inset-inline-start: -20px; 
+  background-color: #140526; /* Deepest, solid opaque dark purple */
   border: 2px solid #15E3C4; /* Clear, sharp aqua border edge definition */
   border-radius: 12px;
   padding: 24px;
@@ -75,47 +102,45 @@
   flex-direction: column;
 }
 
-/* Modifier structure layout for split dashboard panels (Why Upwork) */
 .mega-dropdown-menu.double-panel {
   width: 820px;
-  flex-direction: row;
+  flex-direction: row-reverse; 
   padding: 0;
   overflow: hidden;
 }
 
-/* Left Sidebar Panel inside split configurations */
 .dropdown-branding-panel {
   width: 240px;
-  background-color: #270d45; /* Fully solid, medium card-purple contrast block */
+  background-color: #270d45; 
   padding: 32px 24px;
-  border-right: 2px solid #15E3C4;
+  border-inline-start: 2px solid #15E3C4; 
   display: flex;
   flex-direction: column;
+  text-align: right;
 }
 
 .dropdown-branding-panel h3 {
-  color: #FFFFFF; /* High-contrast crisp white */
+  color: #FFFFFF; 
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 10px 0;
 }
 
 .dropdown-branding-panel p {
-  color: #15E3C4; /* Sharp theme aqua text */
+  color: #15E3C4; 
   font-size: 13.5px;
   line-height: 1.5;
   margin: 0;
   font-weight: 500;
 }
 
-/* Right Content Grid Section Container */
 .dropdown-content-panel {
   flex: 1;
   padding: 32px 24px;
-  background-color: #140526; /* Fully solid background alignment */
+  background-color: #140526; 
+  text-align: right;
 }
 
-/* Internal Section Header Category Titles */
 .dropdown-category-title {
   font-size: 12px;
   text-transform: uppercase;
@@ -123,10 +148,9 @@
   color: #15E3C4;
   font-weight: 700;
   margin-bottom: 16px;
-  padding-left: 6px;
+  padding-inline-start: 6px;
 }
 
-/* Grid Matrix Layout Rules */
 .dropdown-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -134,49 +158,40 @@
   row-gap: 16px;
 }
 
-/* Individual Selectable Grid Block Entries */
 .dropdown-grid-item {
   padding: 10px 12px;
   border-radius: 8px;
   transition: background-color 0.15s ease;
   cursor: pointer;
+  text-align: right; 
 }
 
-/* Solid background change indicator on interaction mouseovers */
 .dropdown-grid-item:hover {
-  background-color: #7E2FD5; /* Bright branding purple focus zone */
+  background-color: #7E2FD5; 
 }
 
 .dropdown-grid-item .item-title {
-  color: #FFFFFF; /* High contrast solid pure white */
+  color: #FFFFFF; 
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
 .dropdown-grid-item .item-desc {
-  color: #E2D7F5; /* Legible solid silver-purple secondary reading tier */
+  color: #E2D7F5; 
   font-size: 12.5px;
   line-height: 1.4;
   font-weight: 400;
 }
 
-/* Force elements inside item grid row blocks to full white during mouse focus states */
 .dropdown-grid-item:hover .item-title,
 .dropdown-grid-item:hover .item-desc {
   color: #FFFFFF;
 }
 
 /* ==========================================================
-   RIGHT SECTION: UTILITIES, SEARCH & AUTHENTICATION
+   UTILITIES, SEARCH & AUTHENTICATION
 ========================================================== */
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Pill Box Search Wrap Shield */
 .search-container {
   display: flex;
   align-items: center;
@@ -191,7 +206,7 @@
 .search-icon {
   display: flex;
   align-items: center;
-  margin-right: 8px;
+  margin-inline-end: 8px;
   color: #15E3C4;
 }
 
@@ -202,6 +217,7 @@
   color: #15E3C4;
   width: 100%;
   font-size: 14px;
+  text-align: right; 
 }
 
 .search-input::placeholder {
@@ -226,7 +242,6 @@
   white-space: nowrap;
 }
 
-/* Authentication Trigger Blocks */
 .navbar-auth {
   display: flex;
   align-items: center;
@@ -244,7 +259,6 @@
   opacity: 0.8;
 }
 
-/* High Visibility Pill Button */
 .btn-signup {
   background-color: #15E3C4;
   color: #7E2FD5; 
